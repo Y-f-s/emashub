@@ -314,7 +314,137 @@
             </div>
         </div>
     </main>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmasHub X Ikapunija Treasury</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: { 
+                    colors: { 
+                        gold: { 400: '#FBBF24', 500: '#F59E0B', 600: '#D97706' }, 
+                        navy: { 800: '#1E293B', 900: '#0F172A' } 
+                    },
+                    fontFamily: { sans: ['Inter', 'Segoe UI', 'sans-serif'], }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; transition: background-color 0.3s, color 0.3s; }
+        .dark body { background-color: #0F172A; color: #E2E8F0; }
+        .tab-active { color: #0F172A; border-bottom: 2px solid #F59E0B; font-weight: 600; }
+        .tab-inactive { color: #64748b; border-bottom: 2px solid transparent; font-weight: 500; }
+        .dark .tab-active { color: #FBBF24; border-bottom-color: #FBBF24; }
+        .dark .tab-inactive { color: #94A3B8; }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen text-slate-800 dark:text-slate-200">
 
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        
+                   </div>
+        </div>
+
+       
+        <!-- Section: Galeri Dokumentasi -->
+        <div class="bg-white dark:bg-navy-800 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 overflow-hidden mb-10">
+            <div class="border-b border-slate-100 dark:border-navy-700 px-6 py-4 bg-slate-50 dark:bg-navy-900">
+                <h2 class="font-bold text-navy-900 dark:text-white"><i class="fa-solid fa-camera text-gold-500 mr-2"></i>Dokumentasi & Portofolio</h2>
+            </div>
+            <div class="p-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- 12 Foto -->
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub  (1).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub  (2).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub  (3).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub  (4).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub  (5).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub  (6).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub  (7).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub  (8).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub  (9).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub (10).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub (11).jpeg" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 hover:scale-[1.02] transition-transform"><img src="Portofolio EmasHub (12).jpeg" class="w-full h-full object-cover"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Catalog Data (16 Juli 2026)
+        const staticCatalog = {
+            'Antam': [
+                { gramStr: '0,5', price: 1470000 }, { gramStr: '1', price: 2750000 },
+                { gramStr: '2', price: 5360000 }, { gramStr: '3', price: 7890000 },
+                { gramStr: '5', price: 13030000 }, { gramStr: '10', price: 25900000 },
+                { gramStr: '25', price: 64450000 }
+            ],
+            'Antam (PO)': [
+                { gramStr: '0,5', price: 1430000 }, { gramStr: '1', price: 2670000 },
+                { gramStr: '2', price: 5265000 }, { gramStr: '3', price: 7780000 },
+                { gramStr: '5', price: 13005000 }, { gramStr: '10', price: 25800000 }
+            ],
+            'UBS': [
+                { gramStr: '0,5', price: 1470000 }, { gramStr: '1', price: 2595000 },
+                { gramStr: '2', price: 5030000 }, { gramStr: '3', price: 7469000 },
+                { gramStr: '5', price: 12236000 }, { gramStr: '10', price: 24150000 },
+                { gramStr: '25', price: 60000000 }
+            ],
+            'Hartadinata': [
+                { gramStr: '0,5', price: 1350000 }, { gramStr: '1', price: 2530000 },
+                { gramStr: '2', price: 4945000 }, { gramStr: '5', price: 12080000 },
+                { gramStr: '10', price: 24110000 }
+            ]
+        };
+
+        function renderGrid(brand) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+            (staticCatalog[brand] || []).forEach(p => {
+                grid.innerHTML += `
+                    <div class="bg-white dark:bg-navy-800 p-5 rounded-2xl border border-slate-100 dark:border-navy-700 shadow-sm hover:border-gold-300 transition-all flex flex-col justify-between">
+                        <h3 class="font-bold text-navy-900 dark:text-white">${brand} ${p.gramStr} gr</h3>
+                        <p class="text-xl font-extrabold text-navy-900 dark:text-white mb-5">${new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(p.price)}</p>
+                        <button onclick="window.open('https://wa.me/6281313324445?text=Saya tertarik membeli ${brand} ${p.gramStr} gr')" class="w-full py-2 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-xl text-sm font-bold">Beli via WA</button>
+                    </div>
+                `;
+            });
+        }
+
+        function switchTab(brand) {
+            ['Antam', 'Antam (PO)', 'UBS', 'Hartadinata'].forEach(b => {
+                const id = b.replace(/ /g, '-');
+                document.getElementById(`tab-${id}`).className = b === brand ? 'tab-btn tab-active px-6 py-4 text-sm' : 'tab-btn tab-inactive px-6 py-4 text-sm';
+            });
+            renderGrid(brand);
+        }
+
+        window.onload = () => renderGrid('Antam');
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+    
     <!-- Footer Emas Hub x Ikapunija Pengusaha -->
     <footer class="bg-navy-900 border-t border-navy-800 text-slate-300 pt-12 pb-6 w-full mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
