@@ -10,7 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
-            darkMode: 'class', // Enables class-based dark mode
+            darkMode: 'class', 
             theme: {
                 extend: { 
                     colors: { 
@@ -27,10 +27,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         
-        /* Light Mode Defaults (Kept as before) */
         body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; transition: background-color 0.3s, color 0.3s; }
-        
-        /* Dark Mode Global Styles */
         .dark body { background-color: #0F172A; color: #E2E8F0; }
         
         ::-webkit-scrollbar { width: 6px; }
@@ -41,13 +38,9 @@
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
         .tab-btn { transition: all 0.2s ease; }
-        
-        /* Light Mode Tabs */
         .tab-active { color: #0F172A; border-bottom: 2px solid #F59E0B; font-weight: 600; }
         .tab-inactive { color: #64748b; border-bottom: 2px solid transparent; font-weight: 500; }
         .tab-inactive:hover { color: #334155; }
-        
-        /* Dark Mode Tabs */
         .dark .tab-active { color: #FBBF24; border-bottom-color: #FBBF24; }
         .dark .tab-inactive { color: #94A3B8; }
         .dark .tab-inactive:hover { color: #CBD5E1; }
@@ -55,8 +48,6 @@
         input[type="number"]::-webkit-inner-spin-button, 
         input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
         input[type="number"] { -moz-appearance: textfield; }
-        
-        /* Toggle Switch Animation */
         .theme-toggle-icon { transition: transform 0.5s ease, opacity 0.3s ease; }
     </style>
 </head>
@@ -73,7 +64,6 @@
                     <span class="font-bold text-xl tracking-tight text-navy-900 dark:text-white">EmasHub X Ikapunija</span>
                 </div>
                 <div class="flex items-center gap-4">
-                    <!-- Theme Toggle Button -->
                     <button id="theme-toggle" class="p-2 rounded-full bg-slate-100 dark:bg-navy-800 text-slate-500 dark:text-gold-400 hover:bg-slate-200 dark:hover:bg-navy-700 transition-colors focus:outline-none">
                         <i id="theme-toggle-dark-icon" class="fa-solid fa-moon theme-toggle-icon hidden"></i>
                         <i id="theme-toggle-light-icon" class="fa-solid fa-sun theme-toggle-icon hidden"></i>
@@ -88,18 +78,15 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         
-        <!-- Market Overview -->
         <div class="mb-8">
             <h1 class="text-3xl font-bold text-navy-900 dark:text-white mb-2">Market Overview & Dynamic Pricing</h1>
-            <p class="text-slate-500 dark:text-slate-400 text-sm">Kalkulator manual interaktif tersambung ke katalog.</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm">Kalkulator manual interaktif dengan fitur Simulasi, Referensi Profit, dan Nego Diskon Persentase.</p>
         </div>
 
         <!-- Section 1: Charts -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-            <!-- XAUUSD -->
             <div class="bg-white dark:bg-navy-800 p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 h-[350px] flex flex-col transition-colors duration-300">
                 <h2 class="text-sm font-bold text-navy-800 dark:text-white mb-3 border-l-4 border-gold-500 pl-3">Emas Dunia (XAU/USD)</h2>
                 <div class="flex-1 w-full rounded-lg overflow-hidden">
@@ -110,30 +97,18 @@
                 </div>
             </div>
             
-            <!-- ANTM -->
             <div class="bg-white dark:bg-navy-800 p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 h-[350px] flex flex-col transition-colors duration-300">
                 <h2 class="text-sm font-bold text-navy-800 dark:text-white mb-3 border-l-4 border-blue-500 pl-3">Saham ANTAM (IDX:ANTM)</h2>
                 <div class="flex-1 w-full rounded-lg overflow-hidden">
                     <div class="tradingview-widget-container" style="height:100%; width:100%;">
                         <div class="tradingview-widget-container__widget" style="height:100%; width:100%;"></div>
                         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-                        {
-                            "autosize": true,
-                            "symbol": "IDX:ANTM",
-                            "interval": "D", 
-                            "timezone": "Asia/Jakarta",
-                            "theme": "light",
-                            "style": "2",
-                            "locale": "id",
-                            "hide_top_toolbar": true,
-                            "hide_legend": false
-                        }
+                        { "autosize": true, "symbol": "IDX:ANTM", "interval": "D", "timezone": "Asia/Jakarta", "theme": "light", "style": "2", "locale": "id", "hide_top_toolbar": true, "hide_legend": false }
                         </script>
                     </div>
                 </div>
             </div>
 
-            <!-- XAUIDR -->
             <div class="bg-white dark:bg-navy-800 p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 h-[350px] flex flex-col transition-colors duration-300">
                 <h2 class="text-sm font-bold text-navy-800 dark:text-white mb-3 border-l-4 border-green-500 pl-3">Emas Rupiah (XAU/IDR)</h2>
                 <div class="flex-1 w-full rounded-lg overflow-hidden">
@@ -146,7 +121,6 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-            <!-- Pluang -->
             <div class="bg-white dark:bg-navy-800 p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 h-[350px] flex flex-col transition-colors duration-300">
                 <div class="flex justify-between items-center mb-3 border-l-4 border-teal-500 pl-3">
                     <h2 class="text-sm font-bold text-navy-800 dark:text-white">Pluang Gold Reference (IDR/g)</h2>
@@ -159,7 +133,6 @@
                 </div>
             </div>
 
-            <!-- USDIDR -->
             <div class="bg-white dark:bg-navy-800 p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 h-[350px] flex flex-col transition-colors duration-300">
                 <div class="flex justify-between items-center mb-3 border-l-4 border-indigo-500 pl-3">
                     <h2 class="text-sm font-bold text-navy-800 dark:text-white">USD to IDR Reference</h2>
@@ -173,12 +146,14 @@
             </div>
         </div>
 
-        <!-- Section 2: Simulasi -->
+        <!-- Section 2: Simulasi Dinamis & Nego -->
         <div class="bg-white dark:bg-navy-800 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 mb-10 overflow-hidden transition-colors duration-300">
             <div class="p-6 border-b border-slate-100 dark:border-navy-700 bg-slate-50 dark:bg-navy-900 transition-colors duration-300">
-                <h2 class="text-lg font-bold text-navy-900 dark:text-white border-l-4 border-gold-500 pl-3">Simulasi Harga LM Antam</h2>
+                <h2 class="text-lg font-bold text-navy-900 dark:text-white border-l-4 border-gold-500 pl-3">Simulasi Live Harga LM Antam & Fitur Nego Diskon</h2>
             </div>
             <div class="p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Input Variabel -->
                 <div class="space-y-4">
                     <h3 class="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">Variabel Pasar Global</h3>
                     
@@ -205,7 +180,7 @@
                             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-400 dark:text-slate-500 font-bold">%</div>
                         </div>
                     </div>
-                    
+
                     <div class="flex justify-between items-center p-2 bg-slate-50 dark:bg-navy-900 rounded-lg border border-slate-200 dark:border-navy-700 border-l-4 border-l-orange-400 dark:border-l-orange-500 transition-colors">
                         <span class="text-sm font-medium text-slate-600 dark:text-slate-300 pl-2">Ongkos Cetak</span>
                         <div class="relative w-32">
@@ -221,21 +196,34 @@
                             <input type="number" id="margin-antam-input" value="147729" class="w-full pl-8 pr-2 py-1.5 rounded-md border-slate-300 dark:border-navy-600 bg-white dark:bg-navy-800 font-bold text-navy-900 dark:text-white text-right outline-none border text-purple-600 dark:text-purple-400 focus:border-gold-500 transition-colors" oninput="triggerUpdate()">
                         </div>
                     </div>
-                    
-                    <div class="flex justify-between items-center p-2 bg-slate-50 dark:bg-navy-900 rounded-lg border border-slate-200 dark:border-navy-700 border-l-4 border-l-blue-400 dark:border-l-blue-500 transition-colors">
-                        <span class="text-sm font-medium text-slate-600 dark:text-slate-300 pl-2">Margin Reseller</span>
-                        <div class="relative w-32">
-                            <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none text-slate-400 dark:text-slate-500 font-bold text-sm">Rp</div>
-                            <input type="number" id="margin-reseller-input" value="133376" class="w-full pl-8 pr-2 py-1.5 rounded-md border-slate-300 dark:border-navy-600 bg-white dark:bg-navy-800 font-bold text-navy-900 dark:text-white text-right outline-none border text-blue-600 dark:text-blue-400 focus:border-gold-500 transition-colors" oninput="triggerUpdate()">
+
+                    <!-- Input Nego Diskon Rasio Persentase -->
+                    <div class="flex justify-between items-center p-2 bg-slate-50 dark:bg-navy-900 rounded-lg border border-slate-200 dark:border-navy-700 border-l-4 border-l-emerald-400 dark:border-l-emerald-500 transition-colors">
+                        <span class="text-sm font-medium text-slate-600 dark:text-slate-300 pl-2">Diskon Nego User</span>
+                        <div class="relative w-24">
+                            <input type="number" id="nego-input" value="0" step="0.1" class="w-full pl-2 pr-7 py-1.5 rounded-md border-slate-300 dark:border-navy-600 bg-white dark:bg-navy-800 font-bold text-navy-900 dark:text-white text-right outline-none border text-emerald-600 dark:text-emerald-400 focus:border-gold-500 transition-colors text-sm" oninput="triggerUpdate()">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-400 dark:text-slate-500 font-bold">%</div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Breakdown Table -->
                 <div class="lg:col-span-2">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Breakdown Harga LM PT. Antam</h3>
+                        <h3 class="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Breakdown Simulasi & Referensi</h3>
                         <select id="gram-selector" onchange="triggerUpdate()" class="bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 text-sm font-semibold text-navy-900 dark:text-white rounded-lg p-2 outline-none focus:border-gold-500 transition-colors">
-                            <option value="0.5">0,5 Gram</option><option value="1" selected>1 Gram</option><option value="2">2 Gram</option><option value="3">3 Gram</option><option value="5">5 Gram</option><option value="10">10 Gram</option><option value="25">25 Gram</option><option value="50">50 Gram</option>
+                            <option value="0.5">0,5 Gram</option>
+                            <option value="1" selected>1 Gram</option>
+                            <option value="2">2 Gram </option>
+                            <option value="3">3 Gram </option>
+                            <option value="5">5 Gram </option>
+                            <option value="10">10 Gram </option>
+                            <option value="25">25 Gram </option>
+                            <option value="50">50 Gram </option>
+                            <option value="100">100 Gram </option>
+                            <option value="250">250 Gram </option>
+                            <option value="500">500 Gram </option>
+                            <option value="1000">1000 Gram </option>
                         </select>
                     </div>
                     
@@ -243,20 +231,39 @@
                         <table class="w-full text-sm text-left">
                             <tbody class="divide-y divide-slate-100 dark:divide-navy-700">
                              <tr>
-                                <td class="px-5 py-4 font-medium text-slate-600 dark:text-slate-300">
+                                <td class="px-5 py-3 font-medium text-slate-600 dark:text-slate-300">
                                     Harga Emas Murni (Bahan Baku) PT. ANTAM
-                                    <br>
-                                    <span class="text-xs text-slate-400 dark:text-slate-500">
-                                        \( \text{Harga Murni} = \frac{\text{Spot} \times \text{Rate}}{31,1035} \)
-                                    </span>
                                 </td>
-                                <td class="px-5 py-4 text-right font-bold text-navy-900 dark:text-white text-base" id="tbl-murni">Rp 0</td>
+                                <td class="px-5 py-3 text-right font-bold text-navy-900 dark:text-white text-base" id="tbl-murni">Rp 0</td>
                             </tr>
-                                <tr><td class="px-5 py-4 font-medium text-slate-600 dark:text-slate-300">Pajak PT. ANTAM (PPN 1,1% (Perhiasan)+ PPh 0,25%)</td><td class="px-5 py-4 text-right font-bold text-red-500 dark:text-red-400 text-base" id="tbl-ppn">+ Rp 0</td></tr>
-                                <tr><td class="px-5 py-4 font-medium text-slate-600 dark:text-slate-300">Ongkos Cetak & Certifed PT. ANTAM (Estimation)</td><td class="px-5 py-4 text-right font-bold text-orange-500 dark:text-orange-400 text-base" id="tbl-cetak">+ Rp 0</td></tr>
-                                <tr><td class="px-5 py-4 font-medium text-slate-600 dark:text-slate-300">Margin PT. ANTAM  (Estimation)</td><td class="px-5 py-4 text-right font-bold text-purple-500 dark:text-purple-400 text-base" id="tbl-margin-antam">+ Rp 0</td></tr>
-                                <tr><td class="px-5 py-4 font-medium text-slate-600 dark:text-slate-300">Margin Reseller EmasHub (Negotiation)</td><td class="px-5 py-4 text-right font-bold text-blue-500 dark:text-blue-400 text-base" id="tbl-margin-reseller">+ Rp 0</td></tr>
-                                <tr class="bg-green-50/50 dark:bg-green-900/20 transition-colors"><td class="px-5 py-5 font-extrabold text-navy-900 dark:text-white">Estimasi Total Harga Jual</td><td class="px-5 py-5 text-right font-black text-xl text-green-600 dark:text-green-400" id="tbl-total">Rp 0</td></tr>
+                                <tr>
+                                    <td class="px-5 py-3 font-medium text-slate-600 dark:text-slate-300">Pajak PT. ANTAM (PPN + PPh)</td>
+                                    <td class="px-5 py-3 text-right font-bold text-red-500 dark:text-red-400 text-base" id="tbl-ppn">+ Rp 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-3 font-medium text-slate-600 dark:text-slate-300">Ongkos Cetak PT. ANTAM</td>
+                                    <td class="px-5 py-3 text-right font-bold text-orange-500 dark:text-orange-400 text-base" id="tbl-cetak">+ Rp 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-3 font-medium text-slate-600 dark:text-slate-300">Margin PT. ANTAM</td>
+                                    <td class="px-5 py-3 text-right font-bold text-purple-500 dark:text-purple-400 text-base" id="tbl-margin-antam">+ Rp 0</td>
+                                </tr>
+                                <tr class="bg-slate-100/50 dark:bg-navy-900/40">
+                                    <td class="px-5 py-3 font-bold text-navy-900 dark:text-white">Harga Simulasi (Base)</td>
+                                    <td class="px-5 py-3 text-right font-bold text-navy-900 dark:text-white text-base" id="tbl-simulasi">Rp 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-3 font-medium text-slate-600 dark:text-slate-300">Presentase Referensi (<span id="tbl-pct-label">8,37</span>%)</td>
+                                    <td class="px-5 py-3 text-right font-bold text-blue-500 dark:text-blue-400 text-base" id="tbl-ref-markup">+ Rp 0</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-3 font-medium text-slate-600 dark:text-slate-300">Pengurangan Nego User (<span id="tbl-nego-label">0</span>%)</td>
+                                    <td class="px-5 py-3 text-right font-bold text-emerald-600 dark:text-emerald-400 text-base" id="tbl-nego-val">- Rp 0</td>
+                                </tr>
+                                <tr class="bg-green-50/50 dark:bg-green-900/20 transition-colors">
+                                    <td class="px-5 py-4 font-extrabold text-navy-900 dark:text-white">Estimasi Total Harga Jual (Nego)</td>
+                                    <td class="px-5 py-4 text-right font-black text-xl text-green-600 dark:text-green-400" id="tbl-total">Rp 0</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -264,10 +271,21 @@
             </div>
         </div>
 
-        <!-- Section 3: Katalog -->
+        <!-- Section 3: Iframe Spreadsheet Total Profit (gid=798921756) -->
+        <div class="bg-white dark:bg-navy-800 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 mb-10 overflow-hidden transition-colors duration-300">
+            <div class="p-6 border-b border-slate-100 dark:border-navy-700 bg-slate-50 dark:bg-navy-900 transition-colors duration-300 flex items-center gap-3">
+                <i class="fa-solid fa-table-list text-emerald-500 text-xl"></i>
+                <h2 class="text-lg font-bold text-navy-900 dark:text-white"> HARGA ANTAM HARI INI </h2>
+            </div>
+            <div class="w-full h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden bg-slate-50 dark:bg-navy-900/50">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROMzIC_hEf1Uiqzw-7F2CFmqVSHnqS_6G9O2rVtstwqgcA3bZJxTTjJdLN3Q_QSbb6DWgpPoYfztOy/pubhtml?gid=798921756&amp;single=true&amp;widget=false&amp;headers=false&amp;chrome=false" class="w-full h-full border-0"></iframe>
+            </div>
+        </div>
+
+        <!-- Section 4: Katalog Otomatis -->
         <div class="bg-white dark:bg-navy-800 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 overflow-hidden mb-10 transition-colors duration-300" id="katalog">
             <div class="border-b border-slate-100 dark:border-navy-700 px-6 py-4 bg-slate-50 dark:bg-navy-900 flex items-center justify-between transition-colors">
-                <h2 class="font-bold text-navy-900 dark:text-white"><i class="fa-solid fa-store text-gold-500 mr-2"></i>Katalog Otomatis</h2>
+                <h2 class="font-bold text-navy-900 dark:text-white"><i class="fa-solid fa-store text-gold-500 mr-2"></i>Katalog Emas Dinamis (Live Generate)</h2>
                 <span class="text-xs bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 px-2 py-1 rounded font-semibold border border-green-200 dark:border-green-800 transition-colors"><i class="fa-brands fa-whatsapp"></i> Direct Pesan</span>
             </div>
             <div class="border-b border-slate-100 dark:border-navy-700 px-2 flex overflow-x-auto bg-white dark:bg-navy-800 transition-colors">
@@ -276,11 +294,11 @@
                 <button onclick="switchTab('Hartadinata')" id="tab-Hartadinata" class="tab-btn tab-inactive px-6 py-4 text-sm whitespace-nowrap">Hartadinata</button>
             </div>
             <div class="p-6 bg-slate-50/30 dark:bg-navy-900/50 min-h-[300px] transition-colors">
-                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
             </div>
         </div>
 
-        <!-- Section 4: Galeri Dokumentasi (DITAMBAHKAN DI SINI) -->
+        <!-- Section 5: Galeri Dokumentasi -->
         <div class="bg-white dark:bg-navy-800 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 overflow-hidden mb-10 transition-colors duration-300">
             <div class="border-b border-slate-100 dark:border-navy-700 px-6 py-4 bg-slate-50 dark:bg-navy-900 flex items-center transition-colors">
                 <h2 class="font-bold text-navy-900 dark:text-white"><i class="fa-solid fa-camera text-gold-500 mr-2"></i>Dokumentasi & Portofolio</h2>
@@ -301,7 +319,7 @@
             </div>
         </div>
 
-        <!-- Section 5: Akad -->
+        <!-- Section 6: Akad -->
         <div class="bg-navy-900 rounded-2xl shadow-xl border border-navy-800 text-white mb-10">
             <div class="p-8 border-b border-navy-800 bg-navy-800">
                 <h2 class="text-2xl font-bold flex items-center gap-3 text-gold-400"><i class="fa-solid fa-handshake-simple"></i>Alur Transaksi & Akad Syariah</h2>
@@ -312,12 +330,13 @@
                     <h3 class="text-lg font-bold mb-6 text-gold-400">Langkah Transaksi</h3>
                     <ul class="space-y-5">
                         <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">1</span><p class="text-sm leading-relaxed text-slate-300">Lihat Grafik Harga Emas Dunia, Saham Antam, dan Referensi lainnya.</p></li>
-                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">2</span><p class="text-sm leading-relaxed text-slate-300">Simulasikan Referensi Harga Logam Antam pada sistem kami.</p></li>
+                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">2</span><p class="text-sm leading-relaxed text-slate-300">Simulasikan Referensi Harga Logam Mulia Antam pada sistem kami.</p></li>
                         <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">3</span><p class="text-sm leading-relaxed text-slate-300">Klik tombol "Beli via WA" untuk Hubungi Admin.</p></li>
-                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">4</span><p class="text-sm leading-relaxed text-slate-300">Negosiasikan Harga Penawaran anda dengan Pricelist Update kami sesuai akad yang ditentukan (Wakalah / Yadin bin Yadin).</p></li>
-                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">5</span><p class="text-sm leading-relaxed text-slate-300">Deal, Pembayaran Transfer/Cash.</p></li>
-                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">6</span><p class="text-sm leading-relaxed text-slate-300">Buat Janji Pengiriman atau Penjemputan LM area Jakarta atau Kurir Nasional.</p></li>
-                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">7</span><p class="text-sm leading-relaxed text-slate-300">Terima kasih telah membeli/menjual.</p></li>
+                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">4</span><p class="text-sm leading-relaxed text-slate-300">Negosiasikan Harga Penawaran Anda dengan Pricelist terbaru kami dengan Akad disepakati (Wakalah / Yadin bin Yadin).</p></li>
+                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">5</span><p class="text-sm leading-relaxed text-slate-300">Deal, Pembayaran Transfer/Cash Terlebih Dahulu.</p></li>
+                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">6</span><p class="text-sm leading-relaxed text-slate-300">Pengiriman via Kurir Nasional/ Pengambilan Languns Jabodetabek.</p></li>
+                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">7</span><p class="text-sm leading-relaxed text-slate-300">Terima kasih telah Membeli/Menjual.</p></li>
+                        <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 border border-gold-500 flex items-center justify-center font-bold text-gold-400">8</span><p class="text-sm leading-relaxed text-slate-300">Informasi Lain PO Emas (Tabungan/Investasi Emas) dengan harga spesial! Hubungi Admin via WhatsApp untuk konsultasi dan penawaran terbaik.</p></li>
                     </ul>
                 </div>
                 <div class="bg-navy-800 p-6 rounded-2xl border border-navy-700">
@@ -341,57 +360,33 @@
             <div class="md:col-span-1 space-y-5">
                 <h3 class="text-xl font-bold text-gold-400 mb-2">EmasHub X Ikapunija Treasury Program</h3>
                 <p class="text-sm text-slate-400 leading-relaxed text-justify">
-                    Merupakan program inisiatif kolaborasi strategis antara Ikapunija Pengusaha dan Platform EmasHub by YPNJ. Kami berkomitmen menyediakan layanan logam mulia yang transparan, amanah, dan berbasis prinsip syariah, sekaligus menyajikan informasi terkini mengenai harga indeks emas global dan pasar domestik Indonesia. Lebih dari sekadar instrumen investasi, program ini juga mengintegrasikan inisiatif kolaborasi sosial untuk mendukung berbagai proyek pembangunan yang sedang berjalan.
+                    Merupakan program inisiatif kolaborasi strategis antara Ikapunija Pengusaha dan Platform EmasHub by YPNJ. Kami berkomitmen menyediakan layanan logam mulia yang transparan, amanah, dan berbasis prinsip syariah.
                 </p>
-                <div class="flex items-center gap-3 pt-2">
-                    <img src="LOGO IKAPUNIJA.png" alt="Logo Ikapunija" class="h-10 w-auto bg-white rounded-md p-1 object-contain shadow-sm">
-                    <img src="LOGO YPNJ.png" alt="Logo YPNJ" class="h-10 w-auto bg-white rounded-md p-1 object-contain shadow-sm">
-                    <img src="yansyah technology.png" alt="Logo Yansyah Technology" class="h-10 w-auto bg-white rounded-md p-1 object-contain shadow-sm">
+                <div class="pt-2">
+                    <p class="text-xs font-semibold text-slate-400 mb-3 uppercase tracking-wider">In Collaboration With:</p>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <img src="LOGO IKAPUNIJA.png" alt="Logo Ikapunija" class="h-10 w-auto bg-white rounded-md p-1 object-contain shadow-sm">
+                        <img src="LOGO YPNJ.png" alt="Logo YPNJ" class="h-10 w-auto bg-white rounded-md p-1 object-contain shadow-sm">
+                        <img src="yansyah technology.png" alt="Logo Yansyah Technology" class="h-10 w-auto bg-white rounded-md p-1 object-contain shadow-sm">
+                        <img src="KN.jpeg" alt="Logo Kilau Nusantara" class="h-10 w-auto bg-white rounded-md p-1 object-cover shadow-sm">
+                    </div>
                 </div>
             </div>
 
             <!-- Kolom 2: Sosial Media -->
             <div class="md:col-span-1">
                 <h3 class="text-lg font-bold text-white mb-5 border-b border-navy-700 pb-2 inline-block">Media Sosial</h3>
-                
-                <!-- Sub-bagian Ikapunija -->
                 <p class="text-gold-500 font-semibold text-xs uppercase mb-2">Ikapunija</p>
                 <ul class="space-y-3 text-sm text-slate-400 mb-6">
-                    <li>
-                        <a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3">
-                            <i class="fa-brands fa-instagram text-lg w-5 text-center"></i> @ikapunija
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3">
-                            <i class="fa-brands fa-youtube text-lg w-5 text-center"></i> Ikapunija Official
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3">
-                            <i class="fa-brands fa-facebook text-lg w-5 text-center"></i> IKAPUNIJA
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3">
-                            <i class="fa-solid fa-globe text-lg w-5 text-center"></i> ikapunija.org
-                        </a>
-                    </li>
+                    <li><a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3"><i class="fa-brands fa-instagram text-lg w-5 text-center"></i> @ikapunija</a></li>
+                    <li><a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3"><i class="fa-brands fa-youtube text-lg w-5 text-center"></i> Ikapunija Official</a></li>
+                    <li><a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3"><i class="fa-brands fa-facebook text-lg w-5 text-center"></i> IKAPUNIJA</a></li>
+                    <li><a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3"><i class="fa-solid fa-globe text-lg w-5 text-center"></i> ikapunija.org</a></li>
                 </ul>
-
-                <!-- Sub-bagian YPNJ -->
                 <p class="text-gold-500 font-semibold text-xs uppercase mb-2">Yayasan PNJ</p>
                 <ul class="space-y-3 text-sm text-slate-400">
-                    <li>
-                        <a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3">
-                            <i class="fa-brands fa-instagram text-lg w-5 text-center"></i> @pemudanusantarajuara
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3">
-                            <i class="fa-solid fa-globe text-lg w-5 text-center"></i> ypnj.org
-                        </a>
-                    </li>
+                    <li><a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3"><i class="fa-brands fa-instagram text-lg w-5 text-center"></i> @pemudanusantarajuara</a></li>
+                    <li><a href="#" class="hover:text-gold-400 transition-colors flex items-center gap-3"><i class="fa-solid fa-globe text-lg w-5 text-center"></i> ypnj.org</a></li>
                 </ul>
             </div>
 
@@ -399,19 +394,13 @@
             <div class="md:col-span-1">
                 <h3 class="text-lg font-bold text-white mb-5 border-b border-navy-700 pb-2 inline-block">Lokasi Sekretariat</h3>
                 <div class="space-y-6">
-                    
-                    <!-- YPNJ -->
                     <div class="flex items-start gap-3 text-sm leading-relaxed text-slate-400">
                         <i class="fa-solid fa-location-dot mt-1 text-gold-500 text-lg"></i>
                         <div>
                             <strong class="text-slate-200 block mb-1">EmasHub By YPNJ</strong>
-                            Gang Muharam No. 35, RT. 13/RW. 04,<br>
-                            Cilandak Barat, Kecamatan Cilandak,<br>
-                            Kota Jakarta Selatan, DKI Jakarta 12430.
+                            Gang Muharam No. 35, RT. 13/RW. 04,<br>Cilandak Barat, Kecamatan Cilandak,<br>Kota Jakarta Selatan, DKI Jakarta 12430.
                         </div>
                     </div>
-
-                    <!-- Ikapunija -->
                     <div class="flex items-start gap-3 text-sm leading-relaxed text-slate-400">
                         <i class="fa-solid fa-building mt-1 text-gold-500 text-lg"></i>
                         <div>
@@ -453,10 +442,8 @@
             
         </div>
         
-        <!-- Copyright Bottom -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-navy-800 text-center text-xs text-slate-500">
-            &copy; 2026 EmasHub X Ikapunija Pengusaha Department. All rights reserved.
-Supported by YPNJ & Yansyah Technology Developer.
+            &copy; 2026 EmasHub X Ikapunija Pengusaha Department. All rights reserved. Supported by YPNJ & Yansyah Technology Developer.
         </div>
     </footer>
 
@@ -466,7 +453,6 @@ Supported by YPNJ & Yansyah Technology Developer.
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
 
-        // Check user's preference on load
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             lightIcon.classList.remove('hidden');
@@ -476,11 +462,8 @@ Supported by YPNJ & Yansyah Technology Developer.
         }
 
         themeToggleBtn.addEventListener('click', function() {
-            // Toggle icons
             darkIcon.classList.toggle('hidden');
             lightIcon.classList.toggle('hidden');
-
-            // Toggle logic
             if (localStorage.getItem('color-theme')) {
                 if (localStorage.getItem('color-theme') === 'light') {
                     document.documentElement.classList.add('dark');
@@ -503,8 +486,24 @@ Supported by YPNJ & Yansyah Technology Developer.
 
         const formatIDR = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
         const TROY_OUNCE = 31.1035;
-        let products = [];
         let currentBrand = 'Antam';
+        let products = [];
+
+        // Definisi Persentase Referensi Berdasarkan Tabel Total Profit
+        const percentagesAntam = {
+            0.5: 8.37,
+            1: 8.37,
+            2: 7.42,
+            3: 7.42,
+            5: 4.57,
+            10: 4.57,
+            25: 3.72,
+            50: 3.72,
+            100: 2.39,
+            250: 2.39,
+            500: 1.93,
+            1000: 1.93
+        };
 
         function triggerUpdate() {
             const spotUSD = parseFloat(document.getElementById('spot-input').value) || 0;
@@ -512,54 +511,87 @@ Supported by YPNJ & Yansyah Technology Developer.
             const ppnRate = (parseFloat(document.getElementById('ppn-input').value) || 0) / 100;
             const ongkosCetakDasar = parseFloat(document.getElementById('cetak-input').value) || 0;
             const marginAntam = parseFloat(document.getElementById('margin-antam-input').value) || 0;
-            const marginReseller = parseFloat(document.getElementById('margin-reseller-input').value) || 0;
+            const negoRate = (parseFloat(document.getElementById('nego-input').value) || 0) / 100;
             const gram = parseFloat(document.getElementById('gram-selector').value);
 
+            // Perhitungan Harga Simulasi (Base)
             const murniPerGram = (spotUSD * kursIDR) / TROY_OUNCE;
             const totalMurniBreakdown = murniPerGram * gram;
             const totalPPNBreakdown = totalMurniBreakdown * ppnRate;
-            const totalJualBreakdown = Math.round(totalMurniBreakdown + totalPPNBreakdown + ongkosCetakDasar + marginAntam + marginReseller);
+            
+            const hargaSimulasi = Math.round(totalMurniBreakdown + totalPPNBreakdown + ongkosCetakDasar + marginAntam);
+            
+            // Rumus: Harga Simulasi + (Harga Simulasi * Presentase Referensi)
+            const refPct = percentagesAntam[gram] || 0;
+            const refMarkup = Math.round(hargaSimulasi * (refPct / 100));
+            const normalJual = hargaSimulasi + refMarkup;
+
+            // Pengurangan Nego User Berbasis Persentase Rasio
+            const negoVal = Math.round(normalJual * negoRate);
+            const finalJual = normalJual - negoVal;
 
             document.getElementById('tbl-murni').innerText = formatIDR(Math.round(totalMurniBreakdown));
             document.getElementById('tbl-ppn').innerText = '+ ' + formatIDR(Math.round(totalPPNBreakdown));
             document.getElementById('tbl-cetak').innerText = '+ ' + formatIDR(ongkosCetakDasar);
             document.getElementById('tbl-margin-antam').innerText = '+ ' + formatIDR(marginAntam);
-            document.getElementById('tbl-margin-reseller').innerText = '+ ' + formatIDR(marginReseller);
-            document.getElementById('tbl-total').innerText = formatIDR(totalJualBreakdown);
+            document.getElementById('tbl-simulasi').innerText = formatIDR(hargaSimulasi);
+            document.getElementById('tbl-ref-markup').innerText = '+ ' + formatIDR(refMarkup);
+            document.getElementById('tbl-nego-val').innerText = '- ' + formatIDR(negoVal);
+            document.getElementById('tbl-nego-label').innerText = (negoRate * 100).toString().replace('.', ',');
+            document.getElementById('tbl-pct-label').innerText = refPct.toString().replace('.', ',');
+            document.getElementById('tbl-total').innerText = formatIDR(finalJual);
 
-            const gramVariants = [0.5, 1, 2, 3, 5, 10, 25, 50];
-            const brands = ['Antam', 'UBS', 'Hartadinata'];
+            // Generate Katalog Otomatis untuk Antam, UBS (-0.5%), dan Hartadinata (-1.0%)
             products = [];
-
+            const brands = ['Antam', 'UBS', 'Hartadinata'];
+            
             brands.forEach(brand => {
-                gramVariants.forEach(g => {
-                    const tMurni = murniPerGram * g;
-                    const tPpn = tMurni * ppnRate;
-                    let premiumKatalog = ongkosCetakDasar + marginAntam + marginReseller; 
-                    if (brand === 'UBS') premiumKatalog -= (20000); 
-                    if (brand === 'Hartadinata') premiumKatalog -= (35000);
-                    const finalTotal = Math.round(tMurni + tPpn + premiumKatalog);
-                    products.push({ brand: brand, gramStr: g.toString().replace('.', ','), finalPrice: finalTotal });
+                Object.keys(percentagesAntam).forEach(gStr => {
+                    const g = parseFloat(gStr);
+                    const pctAntam = percentagesAntam[g];
+                    
+                    let currentPct = pctAntam;
+                    if (brand === 'UBS') {
+                        currentPct = pctAntam - 0.5;
+                    } else if (brand === 'Hartadinata') {
+                        currentPct = pctAntam - 1.0;
+                    }
+                    if (currentPct < 0.01) currentPct = 0.01; 
+
+                    const baseMurniG = murniPerGram * g;
+                    const ppnG = baseMurniG * ppnRate;
+                    const simulasiG = Math.round(baseMurniG + ppnG + ongkosCetakDasar + marginAntam);
+                    
+                    const markupG = Math.round(simulasiG * (currentPct / 100));
+                    const normalG = simulasiG + markupG;
+                    
+                    // Terapkan Diskon Nego Rasio Persentase ke Katalog
+                    const negoG = Math.round(normalG * negoRate);
+                    const finalPrice = normalG - negoG;
+                    
+                    products.push({ brand, gramStr: gStr.replace('.', ','), finalPrice });
                 });
             });
+            
             renderGrid(currentBrand);
         }
 
         function renderGrid(brand) {
             const grid = document.getElementById('product-grid');
             grid.innerHTML = '';
-            const filtered = products.filter(p => p.brand === brand);
-            filtered.forEach(p => {
+            const filteredProducts = products.filter(p => p.brand === brand);
+            
+            filteredProducts.forEach(p => {
                 grid.innerHTML += `
                     <div class="bg-white dark:bg-navy-800 p-5 rounded-2xl border border-slate-100 dark:border-navy-700 shadow-sm hover:shadow-md hover:border-gold-300 dark:hover:border-gold-500 transition-all group flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-navy-900 dark:text-white">${p.brand} ${p.gramStr} gr</h3>
+                                <h3 class="font-bold text-navy-900 dark:text-white">${brand} ${p.gramStr} gr</h3>
                                 <div class="h-8 w-8 rounded-full bg-slate-50 dark:bg-navy-900 flex items-center justify-center text-gold-400 group-hover:bg-gold-50 dark:group-hover:bg-navy-700 group-hover:scale-110 transition-all"><i class="fa-solid fa-gem text-xs"></i></div>
                             </div>
                             <p class="text-xl font-extrabold text-navy-900 dark:text-white mb-5 tracking-tight">${formatIDR(p.finalPrice)}</p>
                         </div>
-                        <button onclick="buyDirectWA('${p.brand}', '${p.gramStr}', ${p.finalPrice})" class="w-full py-2.5 px-4 bg-green-50 dark:bg-green-900/30 hover:bg-green-600 dark:hover:bg-green-600 text-green-700 dark:text-green-400 hover:text-white rounded-xl text-sm font-bold transition-colors flex justify-center items-center gap-2 shadow-sm border border-green-200 dark:border-green-800 hover:border-green-600 dark:hover:border-green-500"><i class="fa-brands fa-whatsapp text-lg"></i> Beli via WA</button>
+                        <button onclick="buyDirectWA('${brand}', '${p.gramStr}', ${p.finalPrice})" class="w-full py-2.5 px-4 bg-green-50 dark:bg-green-900/30 hover:bg-green-600 dark:hover:bg-green-600 text-green-700 dark:text-green-400 hover:text-white rounded-xl text-sm font-bold transition-colors flex justify-center items-center gap-2 shadow-sm border border-green-200 dark:border-green-800 hover:border-green-600 dark:hover:border-green-500"><i class="fa-brands fa-whatsapp text-lg"></i> Beli via WA</button>
                     </div>
                 `;
             });
